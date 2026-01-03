@@ -1,3 +1,3 @@
 .PHONY: update
 update:
-	home-manager switch --flake .nainteeth
+	home-manager switch --flake ./system/#nixrechner

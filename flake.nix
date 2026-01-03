@@ -10,16 +10,17 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ...}:
+  outputs = { nixpkgs, home-manager, ...}:
 		let
 			lib = nixpkgs.lib;
 			system = "x86_64-linux";
 			pkgs = import nixpkgs { inherit system; };
+
 		in {
 			homeConfiguration = {
-				nainteeth = home-manager.lib.homeManagerConfiguration {
+				nixrechner = home-manager.lib.homeManagerConfiguration {
 					inherit pkgs;
-					modules = [ ./home.nix ];
+					modules = [ ../homemanager/home.nix ];
 				};
 			};
 		};
