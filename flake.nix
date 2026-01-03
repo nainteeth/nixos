@@ -2,15 +2,15 @@
   description = "home manager config";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { nixpkgs, home-manager, ...}:
+  outputs = { self, nixpkgs, home-manager, ...}:
 		let
 			lib = nixpkgs.lib;
 			system = "x86_64-linux";
@@ -18,9 +18,9 @@
 
 		in {
 			homeConfiguration = {
-				nixrechner = home-manager.lib.homeManagerConfiguration {
+				nainteeth = home-manager.lib.homeManagerConfiguration {
 					inherit pkgs;
-					modules = [ ../homemanager/home.nix ];
+					modules = [ ./home.nix ];
 				};
 			};
 		};
