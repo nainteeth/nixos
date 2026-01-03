@@ -17,8 +17,8 @@
 			pkgs = import nixpkgs { inherit system; };
 
 		in {
-			homeConfiguration = {
-				nainteeth = home-manager.lib.homeManagerConfigurations {
+			homeConfigurations = {
+				nainteeth = home-manager.lib.homeManagerConfiguration {
 					inherit pkgs;
 					modules = [ ./home.nix ];
 				};
