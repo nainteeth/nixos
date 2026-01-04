@@ -13,6 +13,13 @@ let
     "mako" = "mako";
     "wofi" = "wofi";
   };
+
+  catppuccin-kvantum-full = pkgs.fetchFromGitHub {
+    owner = "catppuccin";
+    repo = "Kvantum";
+    rev = "main";
+    sha256 = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="; # We'll fix this
+  };
 in
 {
   home = {
