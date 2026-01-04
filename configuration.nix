@@ -71,7 +71,13 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.enable = false;
+  services.displayManager.ly = {
+  enable = true;
+  settings = {
+    save = true;          # Remember the last user and session
+    };
+  };
   services.desktopManager.plasma6.enable = true;
 
   services.xserver.xkb = {
@@ -104,7 +110,7 @@
     enableAudioWavelength = true;
     enableSystemMonitoring = true;
   };
-  services.gnome.gcr-ssh-agent.enable = lib.mkForce false; # This is required to use the default ssh agent because something in my config enables the gnome one. Good luck finding it!
+  services.gnome.gcr-ssh-agent.enable = lib.mkForce false; # This is required to use the default ssh agent because something in my config enables the gnome one. Good luck finding it! My guess is dms-shell.
 
   programs.ssh.startAgent = true;
   services.flatpak.enable = true;
