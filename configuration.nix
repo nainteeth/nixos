@@ -102,7 +102,6 @@
   };
 
   hardware.opentabletdriver.enable = true;
-	programs.ssh.startAgent = true;
 	hardware.wooting.enable = true;
 	# udev rules für Wooting 60HE
 	services.udev.extraRules = ''
@@ -113,21 +112,12 @@
 
   environment.systemPackages = with pkgs; [
     home-manager
-    emacs
-    vim 
-    keepassxc
-    prismlauncher
     libwacom
-    osu-lazer-bin
-    cava
     libwacom
     libinput
-		wootility
-    neovim
-    ripgrep
-    nixpkgs-fmt
-    nodejs
-    gcc
+    wootility
+    gnumake
+    git
   ];
 
 	system.stateVersion = "25.11";

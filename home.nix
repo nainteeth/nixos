@@ -1,19 +1,40 @@
 { config, pkgs, lib, ... }:
+
+let
+  dotfiles = "${config.home.homeDirectory}/nixos/config";
+
+  mkSymlink = path: config.lib.file.mkOutOfStoreSymlink path;
+  configDirs = {
+    "nvim" = "nvim";
+    "waybar" = "waybar";
+    "niri" = "niri";
+  };
+in
 {
-	home = {
-		packages = with pkgs; [
-			hello
-		];
+  home = {
+    username = "nainteeth";
+    homeDirectory = "/home/nainteeth";
+    stateVersion = "25.11";
 
-		username = "nainteeth";
-		homeDirectory = "/home/nainteeth";
-
-    # Nicht verändern!
-  	stateVersion = "25.11";
-	};
+    packages = with pkgs; [
+      gcc
+      keepassxc
+      cava
+    ];
+  };
 
   fonts.fontconfig.enable = true;
- 
-  #imports = [
-  #];
+
+  # Automatically create symlinks for all config directories
+  xdg.configFile = builtins.mapAttrs (target: source: {
+    source = mkSymlink "${dotfiles}/${source}";
+    recursive = true;
+  }) configDirs;
+
+  imports = [
+    ./modules/neovim.nix
+    # ./modules/emacs.nix
+    ./modules/niri.nix
+    ./modules/gaming.nix
+  ];
 }
