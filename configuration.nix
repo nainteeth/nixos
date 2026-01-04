@@ -36,7 +36,6 @@
 
   # Networking
   networking.networkmanager.enable = true;
-  networking.wireless.userControlled.enable = true;
 
   # Audio
   services.pulseaudio.enable = false;
