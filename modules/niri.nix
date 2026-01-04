@@ -9,6 +9,7 @@
     waypaper
     pavucontrol
     xwayland-satellite
+    swaybg
 
     # niri is installed as a system package
   ];
