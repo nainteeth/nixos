@@ -25,17 +25,27 @@ in
       keepassxc
       cava
       starship
-      papirus-icon-theme
       libnotify
     ];
   };
 
   gtk = {
     enable = true;
-    iconTheme = {
-      name = "Papirus-Dark"; # Or "Papirus" / "Papirus-Light"
-      package = pkgs.papirus-icon-theme;
+    theme = {
+      name = "catppuccin-mocha-mauve-standart+default";
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "mauve" ];
+        size = "standard";
+        variant = "mocha";
       };
+    };
+    iconTheme = {
+      name = "Papirus-Dark"; 
+      package = pkgs.catppuccin-papirus-folders.override {
+        flavor = "mocha";
+        accent = "mauve";
+      };
+    };
   };
 
   fonts.fontconfig.enable = true;
