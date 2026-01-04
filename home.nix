@@ -8,6 +8,8 @@ let
     "nvim" = "nvim";
     "waybar" = "waybar";
     "niri" = "niri";
+    "starship" = "starship";
+    "kitty" = "kitty";
   };
 in
 {
@@ -20,6 +22,7 @@ in
       gcc
       keepassxc
       cava
+      starship
     ];
   };
 

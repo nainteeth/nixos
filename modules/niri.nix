@@ -8,5 +8,6 @@
     grim
     slurp
     wl-clipboard
+    kitty
   ];
 }
