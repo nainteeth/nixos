@@ -41,6 +41,19 @@ in
       };
     };
 
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.catppuccin-papirus-folders.override {
+        flavor = "mocha";
+        accent = "mauve";
+      };
+    };
+
+    cursorTheme = {
+      name = "catppuccin-mocha-mauve-cursors";
+      package = pkgs.catppuccin-cursors.mochaMauve;
+    };
+
     gtk3.extraConfig = {
       gtk-application-prefer-dark-theme = true;
     };
@@ -59,7 +72,6 @@ in
   }) configDirs;
 
   imports = [
-    inputs.catppuccin.homeModules.catppuccin
     ./modules/neovim.nix
     # ./modules/emacs.nix
     ./modules/niri.nix
