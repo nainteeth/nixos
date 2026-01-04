@@ -8,6 +8,7 @@
     mako
     waypaper
     pavucontrol
+    xwayland-satellite
 
     # niri is installed as a system package
   ];

@@ -17,9 +17,9 @@
 //                               ENVIRONMENT
 // ============================================================================
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Environment
-environment {
-  DISPLAY ":0"
-}
+// environment {
+  // DISPLAY ":0"
+// }
 
 // ============================================================================
 //                                 OUTPUTS
