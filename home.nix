@@ -11,6 +11,7 @@ let
     "starship" = "starship";
     "kitty" = "kitty";
     "mako" = "mako";
+    "wofi" = "wofi";
   };
 in
 {

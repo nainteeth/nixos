@@ -7,6 +7,7 @@
     wofi
     mako
     waypaper
+    pavucontrol
 
     # niri is installed as a system package
   ];
