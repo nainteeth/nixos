@@ -10,6 +10,7 @@ let
     "niri" = "niri";
     "starship" = "starship";
     "kitty" = "kitty";
+    "mako" = "mako";
   };
 in
 {
