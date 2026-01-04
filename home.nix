@@ -12,6 +12,7 @@ let
     "kitty" = "kitty";
     "mako" = "mako";
     "wofi" = "wofi";
+    "Kvantum" = "Kvantum";
   };
 in
 {
@@ -26,6 +27,9 @@ in
       cava
       starship
       libnotify
+      libsForQt5.qtstyleplugin-kvantum
+      kdePackages.qtstyleplugin-kvantum
+      catppuccin-kvantum
     ];
   };
 
@@ -61,6 +65,12 @@ in
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme = true;
     };
+  };
+
+  qt = {
+    enable = true;
+    platformTheme.name = "kvantum";
+    style.name = "kvantum";
   };
 
   fonts.fontconfig.enable = true;
