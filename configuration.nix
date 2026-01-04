@@ -82,6 +82,10 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  fonts.packages = with pkgs; [
+  nerd-fonts.jetbrains-mono
+];
+
   users.users.nainteeth = {
     isNormalUser = true;
     description = "nainteeth";
