@@ -2,6 +2,7 @@
 
 let
   dotfiles = "${config.home.homeDirectory}/nixos/config";
+
   mkSymlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configDirs = {
     "nvim" = "nvim";
@@ -25,7 +26,7 @@ in
       cava
       starship
       libnotify
-      # Qt theming packages
+      # Qt theming
       (catppuccin-kvantum.override {
         accent = "mauve";
         variant = "mocha";
@@ -39,6 +40,7 @@ in
 
   gtk = {
     enable = true;
+    
     theme = {
       name = "catppuccin-mocha-mauve-standard+default";
       package = pkgs.catppuccin-gtk.override {
@@ -82,22 +84,25 @@ in
     source = mkSymlink "${dotfiles}/${source}";
     recursive = true;
   }) configDirs) // {
-    # Kvantum theme config
-    "Kvantum/kvantum.kvconfig".text = lib.generators.toINI {} {
-      General.theme = "Catppuccin-Mocha-Mauve";
-    };
-    # Qt5ct config
-    "qt5ct/qt5ct.conf".text = lib.generators.toINI {} {
-      Appearance = {
-        icon_theme = "Papirus-Dark";
-        style = "kvantum";
+    "Kvantum/kvantum.kvconfig" = {
+      text = lib.generators.toINI {} {
+        General.theme = "Catppuccin-Mocha-Mauve";
       };
     };
-    # Qt6ct config
-    "qt6ct/qt6ct.conf".text = lib.generators.toINI {} {
-      Appearance = {
-        icon_theme = "Papirus-Dark";
-        style = "kvantum";
+    "qt5ct/qt5ct.conf" = {
+      text = lib.generators.toINI {} {
+        Appearance = {
+          icon_theme = "Papirus-Dark";
+          style = "kvantum";
+        };
+      };
+    };
+    "qt6ct/qt6ct.conf" = {
+      text = lib.generators.toINI {} {
+        Appearance = {
+          icon_theme = "Papirus-Dark";
+          style = "kvantum";
+        };
       };
     };
   };
@@ -105,7 +110,6 @@ in
   imports = [
     ./modules/neovim.nix
     ./modules/niri.nix
-    #./modules/emacs.nix
     ./modules/gaming.nix
     ./modules/bash.nix
   ];

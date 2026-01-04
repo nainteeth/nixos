@@ -19,7 +19,7 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Environment
 environment {
     QT_QPA_PLATFORM "wayland"
-    QT_STYLE_OVERRIDE "kvantum"
+    QT_QPA_PLATFORMTHEME "qt5ct"
 }
 
 // ============================================================================
