@@ -5,7 +5,7 @@ let
 
   mkSymlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configDirs = {
-    # "nvim" = "nvim";
+    "nvim" = "nvim";
     "waybar" = "waybar";
     "niri" = "niri";
     "starship" = "starship";
@@ -27,14 +27,6 @@ in
       starship
       libnotify
     ];
-  };
-
-  catppuccin = {
-    enable = true;
-    flavor = "mocha";
-    accent = "mauve";
-    kvantum.enable = true;
-    cursors.enable = true;
   };
 
   gtk = {
