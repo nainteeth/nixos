@@ -24,7 +24,17 @@ in
       keepassxc
       cava
       starship
+      papirus-icon-theme
+      libnotify
     ];
+  };
+
+  gtk = {
+    enable = true;
+    iconTheme = {
+      name = "Papirus-Dark"; # Or "Papirus" / "Papirus-Light"
+      package = pkgs.papirus-icon-theme;
+      };
   };
 
   fonts.fontconfig.enable = true;

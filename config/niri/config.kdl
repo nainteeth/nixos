@@ -223,6 +223,7 @@ binds {
 // ============================================================================
 spawn-at-startup "waybar"
 spawn-at-startup "waypaper" "--restore"
+spawn-at-startup "mako"
 
 // Screenshots
 screenshot-path "~/Bilder/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
