@@ -71,13 +71,7 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   services.xserver.enable = true;
-  services.displayManager.sddm.enable = false;
-  services.displayManager.ly = {
-  enable = true;
-  settings = {
-    save = true;          # Remember the last user and session
-    };
-  };
+  services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
   services.xserver.xkb = {
