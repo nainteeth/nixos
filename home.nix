@@ -39,5 +39,6 @@ in
     # ./modules/emacs.nix
     ./modules/niri.nix
     ./modules/gaming.nix
+    ./modules/bash.nix
   ];
 }
