@@ -1,11 +1,11 @@
-{ config, pkgs, lib, ... }:
+{ inputs, config, pkgs, lib, ... }:
 
 let
   dotfiles = "${config.home.homeDirectory}/nixos/config";
 
   mkSymlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configDirs = {
-    "nvim" = "nvim";
+    # "nvim" = "nvim";
     "waybar" = "waybar";
     "niri" = "niri";
     "starship" = "starship";
@@ -29,22 +29,32 @@ in
     ];
   };
 
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+    accent = "mauve";
+    kvantum.enable = true;
+    cursors.enable = true;
+  };
+
   gtk = {
     enable = true;
+    
     theme = {
-      name = "catppuccin-mocha-mauve-standart+default";
+      name = "catppuccin-mocha-mauve-standard+default";
       package = pkgs.catppuccin-gtk.override {
         accents = [ "mauve" ];
         size = "standard";
         variant = "mocha";
       };
     };
-    iconTheme = {
-      name = "Papirus-Dark"; 
-      package = pkgs.catppuccin-papirus-folders.override {
-        flavor = "mocha";
-        accent = "mauve";
-      };
+
+    gtk3.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+    };
+
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
     };
   };
 
@@ -57,6 +67,7 @@ in
   }) configDirs;
 
   imports = [
+    inputs.catppuccin.homeModules.catppuccin
     ./modules/neovim.nix
     # ./modules/emacs.nix
     ./modules/niri.nix

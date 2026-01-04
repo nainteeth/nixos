@@ -17,9 +17,10 @@
 //                               ENVIRONMENT
 // ============================================================================
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Environment
-// environment {
-  // DISPLAY ":0"
-// }
+environment {
+    QT_QPA_PLATFORM "wayland"
+    QT_STYLE_OVERRIDE "kvantum"
+}
 
 // ============================================================================
 //                                 OUTPUTS
