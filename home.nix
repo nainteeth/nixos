@@ -12,7 +12,6 @@ let
     "kitty" = "kitty";
     "mako" = "mako";
     "wofi" = "wofi";
-    "Kvantum" = "Kvantum";
   };
 in
 {
@@ -76,10 +75,17 @@ in
   fonts.fontconfig.enable = true;
 
   # Automatically create symlinks for all config directories
-  xdg.configFile = builtins.mapAttrs (target: source: {
+  xdg.configFile = (builtins.mapAttrs (target: source: {
     source = mkSymlink "${dotfiles}/${source}";
     recursive = true;
-  }) configDirs;
+  }) configDirs) // {
+    "Kvantum/kvantum.kvconfig" = {
+      text = ''
+        [General]
+        theme=Catppuccin-Mocha-Mauve
+      '';
+    };
+  };
 
   imports = [
     ./modules/neovim.nix
