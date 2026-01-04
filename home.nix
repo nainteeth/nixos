@@ -85,6 +85,10 @@ in
         theme=Catppuccin-Mocha-Mauve
       '';
     };
+    "Kvantum/Catppuccin-Mocha-Mauve" = {
+      source = "${pkgs.catppuccin-kvantum}/share/Kvantum/Catppuccin-Mocha-Mauve";
+      recursive = true;
+    };
   };
 
   imports = [
