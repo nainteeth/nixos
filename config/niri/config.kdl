@@ -203,13 +203,13 @@ binds {
     spawn "flatpak" "run" "app.zen_browser.zen";
   }
   Mod+E repeat=false hotkey-overlay-title="File Manager" {
-    spawn "nautilus";
+    spawn "dolphin";
   }
   Mod+Space hotkey-overlay-title="App Launcher" {
-    spawn "rofi" "-show" "drun";
+    spawn "wofi" "-show" "drun";
   }
   Mod+M hotkey-overlay-title="Task Manager" {
-    spawn "flatpak" "run" "io.missioncenter.MissionCenter";
+    spawn "plasma-systemmonitor";
   }
 
   // Screenshot

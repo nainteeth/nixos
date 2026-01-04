@@ -3,6 +3,8 @@
 {
   home.packages = with pkgs; [
     waybar
+    waypaper
+    pavucontrol
     wofi
     mako
     grim
