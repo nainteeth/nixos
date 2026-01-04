@@ -2,14 +2,9 @@
 
 {
   home.packages = with pkgs; [
-    waybar
-    waypaper
-    pavucontrol
-    wofi
-    mako
-    grim
-    slurp
-    wl-clipboard
     kitty
+    # niri is installed as a system package
   ];
+
+  # The DMS Shell Module is also in configuration.nix
 }

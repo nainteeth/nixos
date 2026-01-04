@@ -92,6 +92,20 @@
   };
 
   programs.firefox.enable = true;
+  programs.niri.enable = true;
+  programs.dms-shell = {
+    enable = true;
+    systemd = {
+      enable = true; # Systemd service for auto-start
+      restartIfChanged = true; # Auto-restart dms.service when dms-shell changes
+    };
+    enableClipboard = true;
+    enableDynamicTheming = true;
+    enableAudioWavelength = true;
+    enableSystemMonitoring = true;
+  };
+  services.gnome.gcr-ssh-agent.enable = lib.mkForce false; # This is required to use the default ssh agent because something in my config enables the gnome one. Good luck finding it!
+
   programs.ssh.startAgent = true;
   services.flatpak.enable = true;
   programs.steam = {
