@@ -25,14 +25,14 @@ environment {
 //                                 OUTPUTS
 // ============================================================================
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Outputs
-output "DP-1" {
+output "DP-2" {
   mode "1920x1080@240"
   transform "normal"
   position x=0 y=0
   scale 1
 }
 
-output "DP-2" {
+output "DP-1" {
   mode "3840x2560@60"
   transform "normal"
   position x=-1920 y=0
@@ -221,7 +221,6 @@ binds {
 // ============================================================================
 //                          STARTUP APPLICATIONS
 // ============================================================================
-spawn-at-startup "xwayland-satellite"
 spawn-at-startup "waybar"
 spawn-at-startup "waypaper" "--restore"
 

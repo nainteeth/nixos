@@ -93,20 +93,7 @@
 
   programs.firefox.enable = true;
   programs.niri.enable = true;
-  programs.dms-shell = {
-    enable = true;
-    systemd = {
-      enable = true; # Systemd service for auto-start
-      restartIfChanged = true; # Auto-restart dms.service when dms-shell changes
-    };
-    enableClipboard = true;
-    enableDynamicTheming = true;
-    enableAudioWavelength = true;
-    enableSystemMonitoring = true;
-  };
-  services.gnome.gcr-ssh-agent.enable = lib.mkForce false; # This is required to use the default ssh agent because something in my config enables the gnome one. Good luck finding it! My guess is dms-shell.
-
-  programs.ssh.startAgent = true;
+  programs.ssh.startAgent = false; # Something is starting the gnome keyring and i dont know what it is!
   services.flatpak.enable = true;
   programs.steam = {
     enable = true;
