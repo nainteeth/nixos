@@ -1,0 +1,95 @@
+* {
+    all: unset;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 14px;
+}
+
+.bar-window {
+    background-color: transparent;
+    margin-left: -45px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.bar-window.visible {
+    margin-left: 0px;
+}
+
+.bar {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    padding: 4px 0;
+    min-width: 50px;
+}
+
+.top-modules,
+.bottom-modules {
+    padding: 4px 0;
+}
+
+.top-modules > * {
+    margin: 4px 0;
+}
+
+.bottom-modules > * {
+    margin: 4px 0;
+}
+
+/* Launcher button */
+.launcher {
+    font-size: 20px;
+    padding: 12px 15px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.launcher:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Audio button */
+.audio-button {
+    font-size: 18px;
+    padding: 8px 15px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.audio-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Clock */
+.clock {
+    padding: 10px 8px;
+    color: #ffffff;
+}
+
+.clock label {
+    font-weight: bold;
+}
+
+.time {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.date {
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+/* System tray */
+.tray {
+    padding: 8px 5px;
+}
+
+.tray > button {
+    padding: 4px 8px;
+    margin: 2px 0;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.tray > button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
