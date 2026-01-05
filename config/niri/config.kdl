@@ -259,7 +259,7 @@ binds {
 //                          STARTUP APPLICATIONS
 // ============================================================================
 spawn-at-startup "waybar"
-spawn-at-startup "waypaper" "--restore"
+// spawn-at-startup "waypaper" "--restore"
 spawn-at-startup "mako"
 spawn-at-startup "/run/current-system/sw/libexec/polkit-kde-authentication-agent-1"
 spawn-at-startup "flatpak" "run" "org.signal.Signal"
