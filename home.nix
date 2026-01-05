@@ -26,56 +26,7 @@ in
       cava
       starship
       libnotify
-      # Qt theming
-      (catppuccin-kvantum.override {
-        accent = "mauve";
-        variant = "mocha";
-      })
-      libsForQt5.qtstyleplugin-kvantum
-      libsForQt5.qt5ct
-      kdePackages.qtstyleplugin-kvantum
-      kdePackages.qt6ct
     ];
-  };
-
-  gtk = {
-    enable = true;
-    
-    theme = {
-      name = "catppuccin-mocha-mauve-standard+default";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "mauve" ];
-        size = "standard";
-        variant = "mocha";
-      };
-    };
-
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.catppuccin-papirus-folders.override {
-        flavor = "mocha";
-        accent = "mauve";
-      };
-    };
-
-    cursorTheme = {
-      name = "catppuccin-mocha-mauve-cursors";
-      package = pkgs.catppuccin-cursors.mochaMauve;
-    };
-
-    gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme = true;
-    };
-
-    gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme = true;
-    };
-  };
-
-  qt = {
-    enable = true;
-    platformTheme.name = "qt5ct";
-    style.name = "kvantum";
   };
 
   fonts.fontconfig.enable = true;
@@ -83,29 +34,7 @@ in
   xdg.configFile = (builtins.mapAttrs (target: source: {
     source = mkSymlink "${dotfiles}/${source}";
     recursive = true;
-  }) configDirs) // {
-    "Kvantum/kvantum.kvconfig" = {
-      text = lib.generators.toINI {} {
-        General.theme = "Catppuccin-Mocha-Mauve";
-      };
-    };
-    "qt5ct/qt5ct.conf" = {
-      text = lib.generators.toINI {} {
-        Appearance = {
-          icon_theme = "Papirus-Dark";
-          style = "kvantum";
-        };
-      };
-    };
-    "qt6ct/qt6ct.conf" = {
-      text = lib.generators.toINI {} {
-        Appearance = {
-          icon_theme = "Papirus-Dark";
-          style = "kvantum";
-        };
-      };
-    };
-  };
+  }) configDirs); 
 
   imports = [
     ./modules/neovim.nix
