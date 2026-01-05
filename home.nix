@@ -12,6 +12,7 @@ let
     "kitty" = "kitty";
     "mako" = "mako";
     "wofi" = "wofi";
+    "ags" = "ags";
   };
 in
 {

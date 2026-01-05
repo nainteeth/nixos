@@ -3,7 +3,8 @@
 {
   home.packages = with pkgs; [
     kitty
-    waybar
+    # waybar
+    ags
     wofi
     mako
     waypaper
