@@ -9,6 +9,7 @@
     nil
     nixpkgs-fmt
     nodejs
+    catppuccin
   ];
 
   programs.neovim = {
