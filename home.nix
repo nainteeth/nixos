@@ -41,5 +41,6 @@ in
     ./modules/niri.nix
     ./modules/gaming.nix
     ./modules/bash.nix
+    ./modules/theming.nix
   ];
 }
